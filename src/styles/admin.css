@@ -1,0 +1,467 @@
+/* Aura & Clothes - admin pages */
+
+.admin-page {
+    min-height: 100vh;
+    background: #f4f4f6;
+    color: #18181b;
+    font-family: var(--font-main, 'Inter', system-ui, sans-serif);
+}
+
+.admin-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: #0b0b0f;
+    color: #fff;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.admin-brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.admin-brand > span > span {
+    color: #d4af37;
+}
+
+.admin-brand small {
+    margin-left: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.18);
+    color: #d4af37;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.admin-bell {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+}
+
+.admin-bell-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+}
+
+.admin-btn {
+    display: inline-block;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #18181b;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.admin-btn:hover:not(:disabled) {
+    background: #f4f4f5;
+}
+
+.admin-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-btn.primary {
+    background: #18181b;
+    border-color: #18181b;
+    color: #fff;
+}
+
+.admin-btn.primary:hover:not(:disabled) {
+    background: #3f3f46;
+}
+
+.admin-btn.danger {
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+.admin-btn.danger:hover:not(:disabled) {
+    background: #fef2f2;
+}
+
+.admin-btn.ghost {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.admin-btn.ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.admin-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+}
+
+.admin-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.admin-title-row h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.admin-sub {
+    margin: 0.2rem 0 0;
+    color: #52525b;
+    font-size: 0.875rem;
+}
+
+.admin-title-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.admin-error {
+    margin-bottom: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    background: #fef2f2;
+    color: #991b1b;
+    font-size: 0.9rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.stat {
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+}
+
+.stat span {
+    display: block;
+    color: #52525b;
+    font-size: 0.8rem;
+}
+
+.stat strong {
+    font-size: 1.4rem;
+}
+
+.stat.highlight {
+    border-color: #d4af37;
+    background: #fffbeb;
+}
+
+.admin-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-tabs button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #d4d4d8;
+    border-radius: 999px;
+    background: #fff;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-tabs button span {
+    margin-left: 0.25rem;
+    color: #71717a;
+}
+
+.admin-tabs button[aria-pressed="true"] {
+    background: #18181b;
+    border-color: #18181b;
+    color: #fff;
+}
+
+.admin-tabs button[aria-pressed="true"] span {
+    color: #d4d4d8;
+}
+
+.admin-empty {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px dashed #d4d4d8;
+    text-align: center;
+    color: #52525b;
+}
+
+.order-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.order-card {
+    padding: 1.1rem 1.25rem;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+}
+
+.order-card.is-new {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.order-id {
+    font-size: 1.05rem;
+}
+
+.new-pill {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: #d4af37;
+    color: #18181b;
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.order-date {
+    color: #71717a;
+    font-size: 0.8rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-Placed { background: #fef3c7; color: #92400e; }
+.status-Confirmed { background: #dbeafe; color: #1e40af; }
+.status-Shipped { background: #e0e7ff; color: #3730a3; }
+.status-Delivered { background: #dcfce7; color: #166534; }
+.status-Cancelled { background: #fee2e2; color: #991b1b; }
+
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.order-grid h3 {
+    margin: 0 0 0.25rem;
+    color: #71717a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.order-grid p {
+    margin: 0;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.order-grid .muted {
+    color: #52525b;
+    font-size: 0.85rem;
+}
+
+.order-items {
+    list-style: none;
+    margin: 0 0 0.9rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid #f4f4f5;
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.order-items li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.order-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.order-total strong {
+    margin-left: 0.4rem;
+    font-size: 1.15rem;
+}
+
+.order-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.admin-toasts {
+    position: fixed;
+    top: 70px;
+    right: 1rem;
+    z-index: 40;
+    display: grid;
+    gap: 0.5rem;
+    width: min(360px, calc(100vw - 2rem));
+}
+
+.admin-toast {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 12px;
+    background: #18181b;
+    color: #fff;
+    border-left: 4px solid #d4af37;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+    animation: toastIn 0.3s ease;
+}
+
+.admin-toast i {
+    color: #d4af37;
+}
+
+.admin-toast span {
+    flex: 1;
+}
+
+.admin-toast button {
+    background: none;
+    border: 0;
+    color: #a1a1aa;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+    .admin-header {
+        flex-wrap: wrap;
+    }
+
+    .order-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .order-actions .admin-btn {
+        flex: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-toast {
+        animation: none;
+    }
+}
+
+/* ---------- notification status on each order ---------- */
+.notify-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.8rem;
+    color: #52525b;
+}
+
+.notify-chip {
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.notify-chip.ok { background: #dcfce7; color: #166534; }
+.notify-chip.fail { background: #fee2e2; color: #991b1b; cursor: help; }
